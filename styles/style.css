@@ -1,0 +1,631 @@
+/* Reset des styles par défaut */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    animation: animateBackground 18s linear infinite alternate;
+    background-image: linear-gradient(-55deg, #FFFFFF, #E7A223, #FFFFFF, #000000);
+    background-size: 30000% 100%;
+}
+
+@keyframes animateBackground {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+header {
+
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Espace égal entre les éléments */
+}
+
+.logo {
+    margin-bottom: 10px;
+    /* Espacement entre le logo et le titre */
+}
+
+.logo img {
+    max-width: 100px;
+    border-radius: 37%;
+    border: 6px outset #E7A223;
+    animation: border-color 5s infinite;
+    /* Ajuste la taille du logo */
+}
+
+@keyframes border-color {
+    0% {
+        border-color: rgb(99, 147, 135);
+    }
+
+    25% {
+        border-color: rgb(135, 99, 147);
+    }
+
+    50% {
+        border-color: rgb(147, 135, 99);
+    }
+
+    75% {
+        border-color: rgb(99, 147, 135);
+    }
+
+    100% {
+        border-color: rgb(99, 135, 147);
+    }
+}
+
+main {
+    overflow: hidden;
+}
+
+h1 {
+    flex-grow: 1;
+    /* Permet au titre de prendre autant d'espace que possible */
+    text-align: center;
+    /* Centre le titre */
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    /* Affiche les éléments en ligne */
+}
+
+nav .nav-links li {
+    margin: 0 10px;
+    /* Espacement entre les éléments de la barre de navigation */
+    text-align: center;
+    /* Centre les éléments */
+}
+
+nav .nav-links li a {
+    text-decoration: none;
+    color: #000;
+}
+
+@media screen and (max-width: 770px) {
+    .logo {
+        margin-bottom: 5px;
+        /* Réduit l'espacement entre le logo et le titre */
+    }
+
+    h1 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        /* Réduit l'espacement entre le nom du site et le menu déroulant */
+    }
+
+    nav .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 129px;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        z-index: 2;
+    }
+
+    nav .nav-links.active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    nav .nav-links li {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin: 10px auto;
+        padding: 5px 10px;
+        background-color: #E7A223;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    .article,
+    .partner {
+        flex: 0 0 calc(50% - 20px);
+    }
+
+    form {
+        width: 90%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .team-member {
+        flex-basis: calc(50% - 40px);
+        /* 2 membres par ligne sur les écrans plus petits */
+    }
+}
+
+@media screen and (min-width: 771px) {
+    .menu-toggle {
+        display: none;
+        /* Masque le bouton de menu en format desktop */
+    }
+}
+
+/* Styles pour le carrousel */
+.carrousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    /* Place le carrousel au-dessus du fond animé */
+}
+
+.carrousel-container {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.carrousel-item {
+    flex: 0 0 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.carrousel-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* "slide-left" active la transition du carrousel */
+.slide-left {
+    transform: translateX(-100%);
+}
+
+.membership {
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team-member {
+    flex-basis: calc(33.33% - 40px);
+    /* 3 membres par ligne */
+    margin: 0 15px 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    max-width: 100%;
+}
+
+.team-member img {
+    width: 250px;
+    height: 200px;
+    border-radius: 5%;
+    max-width: 100%;
+}
+
+.team-member h3 {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.italic-title {
+    font-style: italic;
+    font-size: 18px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.box-timeline {
+    position: relative;
+    padding: 80px 0 100px 0;
+    margin-bottom: 100px;
+    animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(15px);
+        /* Ajustez la distance du rebond */
+    }
+}
+
+.ligne {
+    height: 1000px;
+    width: 12px;
+    margin: 0 auto;
+    background: #333;
+}
+
+/* les ronds */
+
+.rond {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #333;
+    position: absolute;
+    border: 5px solid #000;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.r1 {
+    top: 80px;
+}
+
+.r2 {
+    top: 386px;
+}
+
+.r3 {
+    top: 692px;
+}
+
+.r4 {
+    top: 1000px;
+}
+
+/* les boxs */
+
+.box {
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f1f1f1;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.b1 {
+    top: 30px;
+    left: calc(50% - 270px);
+
+}
+
+.b2 {
+    top: 336px;
+    left: calc(50% + 270px);
+}
+
+.b3 {
+    top: 642px;
+    left: calc(50% - 270px);
+}
+
+.b4 {
+    top: 950px;
+    left: calc(50% + 270px);
+}
+
+.box p {
+    line-height: 20px;
+    font-size: 18px;
+    margin: 10px 0 20px 0;
+}
+
+.btn {
+    display: block;
+    background: midnightblue;
+    padding: 10px;
+    width: 120px;
+    text-align: center;
+    color: #f1f1f1;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .ligne {
+        position: relative;
+        left: 200px;
+    }
+
+    .rond {
+        left: calc(50% + 200px);
+    }
+
+    .box {
+        left: calc(50% - 50px)
+    }
+
+}
+
+@media screen and (max-width: 540px) {
+    .rond {
+        left: calc(50% + 200px);
+    }
+
+    .box {
+        left: calc(50% - 50px);
+        width: 380px;
+        transform: translate(-46%);
+    }
+
+    .team-member {
+        flex-basis: calc(100% - 200px);
+        /* 1 membre par ligne sur les écrans encore plus petits */
+    }
+
+}
+
+.testimonials {
+    padding: 50px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.tittle_testimonial h2 {
+    margin-bottom: 10px;
+    /* Ajustement de la marge */
+}
+
+.carrousel-container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonials-list {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Styles pour les témoignages */
+.testimonial {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.testimonial.active {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+    position: absolute;
+    left: 50%;
+}
+
+.testimonial-text {
+    margin-bottom: 10px;
+}
+
+.author {
+    font-style: italic;
+    color: #888;
+}
+
+/* Styles pour les indicateurs du carrousel de témoignages */
+.carrousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #888;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #333;
+}
+
+/* Flexbox styles pour la section "Articles" */
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 10px;
+}
+
+.article {
+    flex: 0 0 calc(33.33% - 20px);
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 6px outset #000;
+    border-radius: 8px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.full-width-article {
+    flex-basis: 100%;
+}
+
+.article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.article h2 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.article p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Flexbox styles pour la section "Partenaires" */
+.partners {
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    animation: scroll 16s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.partner {
+    flex: 0 0 calc(33.33% - 20px);
+    text-align: center;
+    display: inline-block;
+    margin-right: 65px;
+}
+
+.partner img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Styles pour le pied de page */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    /* Place le footer au-dessus du reste du contenu */
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    /* Centre horizontalement les éléments */
+}
+
+.footer-nav ul li {
+    margin: 5px 15px;
+    /* Espacement entre les éléments */
+}
+
+.footer-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Styles pour le formulaire */
+form {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #e7a223;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #d4941e;
+}
