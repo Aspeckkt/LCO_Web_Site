@@ -1,2 +1,8 @@
 # LCO_Web_Site
-Repos contenant l'ensemble du site web pour l'entreprise LCO
+
+
+21/08/2023 - 11:00h
+
+Ceci est le premier Versioning du site web d'LCO Consulting System, vous pourrez suivre en temps réels sont évolutions grâce à cette page.
+
+Geoffray
