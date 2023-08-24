@@ -6,7 +6,7 @@ function startCarrousel() {
     setInterval(() => {
         currentIndex = (currentIndex + 1) % carrouselItems.length;
         carrouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }, 3500); // Défilement toutes les 3,5 secondes
+    }, 7500); // Défilement toutes les 3,5 secondes
 }
 
 startCarrousel();

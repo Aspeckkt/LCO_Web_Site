@@ -1,4 +1,3 @@
-/* Reset des styles par défaut */
 *,
 *::before,
 *::after {
@@ -7,131 +6,265 @@
     box-sizing: border-box;
 }
 
-/* Styles généraux */
 body {
     font-family: Arial, sans-serif;
-    animation: animateBackground 18s linear infinite alternate;
-    background-image: linear-gradient(-55deg, #FFFFFF, #E7A223, #FFFFFF, #000000);
-    background-size: 30000% 100%;
 }
 
-@keyframes animateBackground {
+/* Background Start */
+
+.background span {
+    position: fixed;
+    top: -120px;
+    height: 50px;
+    width: 50px;
+    z-index: -1;
+    animation: animab 10s linear infinite;
+}
+
+.background span:nth-child(1) {
+    left: 60px;
+    animation-delay: 0.6s;
+    border: 5px solid goldenrod;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.background span:nth-child(2) {
+    left: 60%;
+    animation-delay: 3s;
+    width: 60px;
+    height: 60px;
+    background: goldenrod;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.background span:nth-child(3) {
+    left: 20%;
+    animation-delay: 2s;
+    border: 5px solid #fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.background span:nth-child(4) {
+    left: 30%;
+    animation-delay: 5s;
+    width: 80px;
+    height: 80px;
+    background: gold;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.background span:nth-child(5) {
+    left: 40%;
+    animation-delay: 1s;
+    border: 5px solid goldenrod;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.background span:nth-child(6) {
+    left: 50%;
+    animation-delay: 7s;
+    border: 5px solid #fff4c2;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.background span:nth-child(7) {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    left: 60%;
+    animation-delay: 6s;
+    width: 100px;
+    height: 100px;
+    background: gold;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.background span:nth-child(8) {
+    left: 70%;
+    animation-delay: 8s;
+    border: 5px solid #fff4c2;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.background span:nth-child(9) {
+    left: 80%;
+    animation-delay: 6s;
+    width: 90px;
+    height: 90px;
+    background: goldenrod;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.background span:nth-child(10) {
+    left: 90%;
+    animation-delay: 1s;
+    border: 5px solid gold;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes animab {
     0% {
-        background-position: 0% 0%;
+        transform: translateY(1200px);
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 7;
     }
 
     100% {
-        background-position: 100% 100%;
+        transform: translateY(0) rotate(360deg);
+        opacity: 0;
     }
 }
 
-header {
+/* Background end */
 
+h1 {
+    font-size: 2.5rem;
+    color: #000;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header {
     padding: 10px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* Espace égal entre les éléments */
 }
 
 .logo {
-    margin-bottom: 10px;
-    /* Espacement entre le logo et le titre */
+    order: 1;
+    /* Met le logo en premier */
+}
+
+nav {
+    order: 2;
+    /* Met la navigation au milieu */
+    flex-grow: 1;
+    /* Fait grandir la navigation pour occuper l'espace restant */
+    text-align: center;
+    /* Centre le texte horizontalement */
+}
+
+.menu-toggle {
+    text-align: center;
+    align-items: center;
+    order: 3;
+    /* Met le bouton de menu à droite */
+    position: fixed;
+    top: 50px;
+    /* Ajustez la valeur pour régler la position verticale */
+    right: 20px;
+    /* Ajustez la valeur pour régler la position horizontale */
 }
 
 .logo img {
-    max-width: 100px;
-    border-radius: 37%;
+    max-width: 120px;
+    border-radius: 34%;
     border: 6px outset #E7A223;
-    animation: border-color 5s infinite;
-    /* Ajuste la taille du logo */
+    animation: border-color 12s infinite;
 }
 
 @keyframes border-color {
     0% {
-        border-color: rgb(99, 147, 135);
+        border-color: rgb(255, 255, 255);
     }
 
     25% {
-        border-color: rgb(135, 99, 147);
+        border-color: rgb(255, 216, 133);
     }
 
     50% {
-        border-color: rgb(147, 135, 99);
+        border-color: rgb(161, 134, 52);
     }
 
     75% {
-        border-color: rgb(99, 147, 135);
+        border-color: rgb(0, 0, 0);
     }
 
     100% {
-        border-color: rgb(99, 135, 147);
+        border-color: rgb(255, 255, 255);
     }
+}
+
+.keywords {
+    font-size: 0px;
 }
 
 main {
     overflow: hidden;
-}
-
-h1 {
-    flex-grow: 1;
-    /* Permet au titre de prendre autant d'espace que possible */
-    text-align: center;
-    /* Centre le titre */
+    margin: 10px;
 }
 
 nav .nav-links {
     list-style: none;
     display: flex;
-    /* Affiche les éléments en ligne */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-right: 145px;
 }
 
 nav .nav-links li {
-    margin: 0 10px;
-    /* Espacement entre les éléments de la barre de navigation */
     text-align: center;
-    /* Centre les éléments */
 }
 
 nav .nav-links li a {
     text-decoration: none;
     color: #000;
+    font-weight: bold;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links li a:hover {
+    color: #E7A223;
 }
 
 @media screen and (max-width: 770px) {
     .logo {
         margin-bottom: 5px;
-        /* Réduit l'espacement entre le logo et le titre */
     }
 
-    h1 {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        /* Réduit l'espacement entre le nom du site et le menu déroulant */
+    #sticky-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
     }
 
     nav .nav-links {
-        display: none;
+        display: flex;
         flex-direction: column;
         align-items: center;
         position: absolute;
-        top: 129px;
-        left: 0;
-        right: 0;
-        background-color: #fff;
+        padding: 0;
+        top: 135px;
+        left: 0px;
+        right: 0px;
         opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.3s ease-in-out;
         z-index: 2;
     }
 
     nav .nav-links.active {
-        display: flex;
         opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+        max-height: 295px;
+        transition: max-height 0.5s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.3s ease-in-out;
     }
 
     nav .nav-links li {
@@ -141,18 +274,25 @@ nav .nav-links li a {
 
     .menu-toggle {
         display: block;
-        margin: 10px auto;
-        padding: 5px 10px;
-        background-color: #E7A223;
-        color: #fff;
+        padding: 5px 20px;
+        background-color: #e7a22300;
         border: none;
         cursor: pointer;
     }
 
-    .article,
+    .hamburger-menu {
+        animation: none;
+        width: 35px;
+        height: 3px;
+        background-color: #000;
+        margin: 7px 0;
+        display: block;
+    }
+
     .partner {
         flex: 0 0 calc(50% - 20px);
     }
+
 
     form {
         width: 90%;
@@ -163,30 +303,34 @@ nav .nav-links li a {
         align-items: center;
     }
 
-    nav ul li {
-        margin: 10px 0;
+    .team-member {
+        width: 50%;
+        margin: 0 auto 24px auto;
     }
 
-    .team-member {
-        flex-basis: calc(50% - 40px);
-        /* 2 membres par ligne sur les écrans plus petits */
+    .team-member h3 {
+        font-size: 5vw;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    .carrousel {
+        margin-top: 120px;
     }
 }
 
 @media screen and (min-width: 771px) {
     .menu-toggle {
         display: none;
-        /* Masque le bouton de menu en format desktop */
     }
+
 }
 
-/* Styles pour le carrousel */
 .carrousel {
     overflow: hidden;
     position: relative;
     width: 100%;
     z-index: 1;
-    /* Place le carrousel au-dessus du fond animé */
 }
 
 .carrousel-container {
@@ -206,12 +350,11 @@ nav .nav-links li a {
     border-radius: 8px;
 }
 
-/* "slide-left" active la transition du carrousel */
 .slide-left {
     transform: translateX(-100%);
 }
 
-.membership {
+#membership {
     padding: 20px 0;
 }
 
@@ -224,46 +367,132 @@ nav .nav-links li a {
 
 .team-members {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .team-member {
-    flex-basis: calc(33.33% - 40px);
-    /* 3 membres par ligne */
-    margin: 0 15px 20px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    width: calc(33.33% - 12px);
+    min-width: 260px;
+    background: goldenrod;
+    margin: 0 12px 24px 0;
+    overflow: hidden;
     text-align: center;
-    max-width: 100%;
+    border: 2px solid black;
+    border-radius: 4%;
+    box-sizing: border-box;
 }
 
-.team-member img {
+.member-info {
+    display: block;
     width: 250px;
-    height: 200px;
-    border-radius: 5%;
-    max-width: 100%;
+    height: 250px;
+    border-radius: 40%;
+    margin: auto;
+    overflow: hidden;
+    border: 7px outset #ddd;
+}
+
+.member-info img {
+    width: 250px;
+    height: 250px;
 }
 
 .team-member h3 {
-    font-size: 24px;
-    margin-top: 10px;
-    color: #333;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #fff;
 }
+
+.team-member p {
+    color: #fff;
+    font-size: 18px;
+    width: 85%;
+    margin: auto;
+}
+
+.socials {
+    padding-top: 30px;
+}
+
+.socials i {
+    padding: 0 15px;
+    text-align: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+
+.footer-social i {
+    margin-top: 10px;
+    padding: 0 10px;
+    text-align: center;
+    align-items: center;
+    font-size: 3.5em;
+}
+
+.animate-member {
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    animation: bubling 2.5s linear alternate-reverse infinite;
+}
+
+@keyframes bubling {
+    0% {
+        box-shadow:
+            0 0 0 0 rgba(255, 255, 255, 0.1),
+            0 0 0 60px rgba(255, 255, 255, 0.1),
+            0 0 0 120px rgba(255, 255, 255, 0.1),
+            0 0 0 180px rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 20px rgba(255, 255, 255, 0.1),
+            0 0 0 120px rgba(255, 255, 255, 0.1),
+            0 0 0 240px rgba(255, 255, 255, 0.1),
+            0 0 0 400px rgba(255, 255, 255, 0.1);
+    }
+}
+
 
 .italic-title {
     font-style: italic;
     font-size: 18px;
     color: #666;
     margin-top: 5px;
+    overflow: hidden;
+}
+
+#boxs {
+    max-width: 100%;
+    width: 100%;
+}
+
+#boxs h1:nth-child(2),
+#animated-text {
+    border-right: 2px solid black;
+    animation: blink 0.8s linear infinite;
+}
+
+@keyframes blink {
+    0% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: black;
+    }
+
+    100% {
+        border-color: transparent;
+    }
 }
 
 .box-timeline {
     position: relative;
     padding: 80px 0 100px 0;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     animation: bounce 2s infinite alternate;
 }
 
@@ -274,7 +503,6 @@ nav .nav-links li a {
 
     100% {
         transform: translateY(15px);
-        /* Ajustez la distance du rebond */
     }
 }
 
@@ -284,8 +512,6 @@ nav .nav-links li a {
     margin: 0 auto;
     background: #333;
 }
-
-/* les ronds */
 
 .rond {
     width: 80px;
@@ -303,7 +529,7 @@ nav .nav-links li a {
 }
 
 .r1 {
-    top: 80px;
+    top: 79px;
 }
 
 .r2 {
@@ -315,10 +541,8 @@ nav .nav-links li a {
 }
 
 .r4 {
-    top: 1000px;
+    top: 1001px;
 }
-
-/* les boxs */
 
 .box {
     width: 400px;
@@ -399,13 +623,19 @@ nav .nav-links li a {
     }
 
     .team-member {
-        flex-basis: calc(100% - 200px);
-        /* 1 membre par ligne sur les écrans encore plus petits */
+        width: 50%;
+    }
+
+    .team-member img {
+        width: 250px;
+        height: 250px;
+        border-radius: 5%;
+        max-width: 100%;
     }
 
 }
 
-.testimonials {
+#testimonials {
     padding: 50px 0;
     text-align: center;
     position: relative;
@@ -414,7 +644,6 @@ nav .nav-links li a {
 
 .tittle_testimonial h2 {
     margin-bottom: 10px;
-    /* Ajustement de la marge */
 }
 
 .carrousel-container2 {
@@ -431,11 +660,10 @@ nav .nav-links li a {
     position: relative;
 }
 
-/* Styles pour les témoignages */
 .testimonial {
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
     border-radius: 8px;
@@ -448,6 +676,7 @@ nav .nav-links li a {
     transform: translateY(0) translateX(-50%);
     position: absolute;
     left: 50%;
+    border: 2px solid;
 }
 
 .testimonial-text {
@@ -457,13 +686,13 @@ nav .nav-links li a {
 .author {
     font-style: italic;
     color: #888;
+    height: 20px;
 }
 
-/* Styles pour les indicateurs du carrousel de témoignages */
 .carrousel-indicators {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 20px;
     position: relative;
 }
 
@@ -480,47 +709,14 @@ nav .nav-links li a {
     background-color: #333;
 }
 
-/* Flexbox styles pour la section "Articles" */
-.articles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px 10px;
+#partenaires {
+    margin-bottom: 40px;
 }
 
-.article {
-    flex: 0 0 calc(33.33% - 20px);
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 6px outset #000;
-    border-radius: 8px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
+#partenaires h1 {
+    margin-bottom: 50px;
 }
 
-.full-width-article {
-    flex-basis: 100%;
-}
-
-.article img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.article h2 {
-    margin-top: 10px;
-    font-size: 1.5rem;
-}
-
-.article p {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #666;
-}
-
-/* Flexbox styles pour la section "Partenaires" */
 .partners {
     display: flex;
     justify-content: space-between;
@@ -550,15 +746,11 @@ nav .nav-links li a {
     height: auto;
 }
 
-
-/* Styles pour le pied de page */
 footer {
     text-align: center;
-    padding: 20px 0;
     position: absolute;
     width: 100%;
     z-index: 3;
-    /* Place le footer au-dessus du reste du contenu */
 }
 
 footer p {
@@ -569,12 +761,10 @@ footer p {
     list-style: none;
     display: flex;
     justify-content: center;
-    /* Centre horizontalement les éléments */
 }
 
 .footer-nav ul li {
     margin: 5px 15px;
-    /* Espacement entre les éléments */
 }
 
 .footer-nav ul li a {
@@ -583,49 +773,51 @@ footer p {
     font-weight: bold;
 }
 
-/* Styles pour le formulaire */
-form {
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-textarea {
-    resize: vertical;
-}
-
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #e7a223;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
+#scrollButton {
+    display: none;
+    position: fixed;
+    padding-bottom: 50px;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    color: #d4941e;
+    border-radius: 10px;
+    font-size: 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    z-index: 4;
 }
 
-button:hover {
-    background-color: #d4941e;
+.fleche {
+    text-align: center;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+/* Centralisation of the background animation about head, nav and foot */
+header,
+footer,
+nav .nav-links.active {
+    animation: animateBackground 11s linear infinite alternate;
+    background-image: linear-gradient(-55deg, #ffffff, #E7A223, #e4e4e4, #242424);
+    background-size: 3000% 100%;
+}
+
+@keyframes animateBackground {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 180%;
+    }
+}
+
+/*color for fa fa boxs */
+.fa-file-text-o,
+.fa-code-fork,
+.fa-folder-open-o,
+.fa-money {
+    color: goldenrod;
 }
