@@ -6,8 +6,14 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
+    background-color: whitesmoke;
 }
 
 /* Background Start */
@@ -99,6 +105,8 @@ body {
     border: 5px solid gold;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
 }
+
+/* background end */
 
 .banner {
     display: flex;
@@ -213,7 +221,7 @@ nav .nav-links {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    padding-right: 145px;
+    padding-right: 125px;
 }
 
 nav .nav-links li {
@@ -233,9 +241,6 @@ nav .nav-links li a:hover {
 }
 
 @media screen and (max-width: 770px) {
-    .logo {
-        margin-bottom: 5px;
-    }
 
     #sticky-header {
         position: fixed;
@@ -262,6 +267,7 @@ nav .nav-links li a:hover {
     }
 
     nav .nav-links.active {
+        padding-top: 10px;
         opacity: 1;
         max-height: 295px;
         transition: max-height 0.5s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.3s ease-in-out;
@@ -269,6 +275,7 @@ nav .nav-links li a:hover {
 
     nav .nav-links li {
         padding: 10px;
+
         text-align: center;
     }
 
@@ -443,7 +450,7 @@ nav .nav-links li a:hover {
             0 0 0 0 rgba(255, 255, 255, 0.1),
             0 0 0 60px rgba(255, 255, 255, 0.1),
             0 0 0 120px rgba(255, 255, 255, 0.1),
-            0 0 0 180px rgba(255, 255, 255, 0.1);
+            0 0 0 280px rgba(255, 255, 255, 0.1);
     }
 
     100% {
@@ -451,7 +458,7 @@ nav .nav-links li a:hover {
             0 0 0 20px rgba(255, 255, 255, 0.1),
             0 0 0 120px rgba(255, 255, 255, 0.1),
             0 0 0 240px rgba(255, 255, 255, 0.1),
-            0 0 0 400px rgba(255, 255, 255, 0.1);
+            0 0 0 380px rgba(255, 255, 255, 0.1);
     }
 }
 
@@ -510,7 +517,7 @@ nav .nav-links li a:hover {
     height: 1000px;
     width: 12px;
     margin: 0 auto;
-    background: #333;
+    background: #000;
 }
 
 .rond {
@@ -519,7 +526,7 @@ nav .nav-links li a:hover {
     border-radius: 50%;
     background: #333;
     position: absolute;
-    border: 5px solid #000;
+    border: 44px solid #000;
     left: 50%;
     transform: translate(-50%);
     display: flex;
@@ -545,7 +552,7 @@ nav .nav-links li a:hover {
 }
 
 .box {
-    width: 400px;
+    width: 390px;
     padding: 20px;
     border-radius: 10px;
     background: #f1f1f1;
@@ -553,6 +560,7 @@ nav .nav-links li a:hover {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
+    opacity: 0.9;
 }
 
 .b1 {
@@ -595,7 +603,6 @@ nav .nav-links li a:hover {
 }
 
 @media screen and (max-width: 1000px) {
-
     .ligne {
         position: relative;
         left: 200px;
@@ -636,10 +643,14 @@ nav .nav-links li a:hover {
 }
 
 #testimonials {
-    padding: 50px 0;
+    padding: 69px 0;
     text-align: center;
     position: relative;
     overflow: hidden;
+}
+
+.tittle_testimonial {
+    margin-bottom: 50px;
 }
 
 .tittle_testimonial h2 {
@@ -782,8 +793,9 @@ footer p {
     width: 50px;
     height: 50px;
     background-color: transparent;
-    color: #d4941e;
+    color: #000;
     border-radius: 10px;
+    border: 3px solid black;
     font-size: 20px;
     cursor: pointer;
     z-index: 4;
@@ -798,10 +810,10 @@ footer p {
 /* Centralisation of the background animation about head, nav and foot */
 header,
 footer,
-nav .nav-links.active {
-    animation: animateBackground 11s linear infinite alternate;
+nav .nav-links {
+    animation: animateBackground 16s linear infinite alternate;
     background-image: linear-gradient(-55deg, #ffffff, #E7A223, #e4e4e4, #242424);
-    background-size: 3000% 100%;
+    background-size: 30000% 100%;
 }
 
 @keyframes animateBackground {
@@ -810,7 +822,7 @@ nav .nav-links.active {
     }
 
     100% {
-        background-position: 100% 180%;
+        background-position: 100% 0%;
     }
 }
 
@@ -820,4 +832,82 @@ nav .nav-links.active {
 .fa-folder-open-o,
 .fa-money {
     color: goldenrod;
+}
+
+.footer-contact {
+    text-align: center;
+    /* Alignement du texte au centre */
+    font-family: Arial, sans-serif;
+    /* Police de caractères */
+}
+
+.footer-contact h3 {
+    font-size: 22px;
+    /* Taille de police pour le titre h3 */
+    margin-bottom: 10px;
+    /* Marge inférieure pour le titre */
+}
+
+.footer-contact p {
+    font-size: 16px;
+}
+
+/* Style spécifique pour le lien email */
+.footer-contact p:nth-child(2) {
+    color: #007bff;
+    /* Couleur du lien */
+    text-decoration: none;
+    /* Pas de soulignement */
+    font-weight: bold;
+    /* Texte en gras */
+}
+
+/* Style spécifique pour le numéro de téléphone */
+.footer-contact p:nth-child(3) {
+    color: #333;
+    /* Couleur du numéro de téléphone */
+    font-weight: bold;
+    /* Texte en gras */
+    padding-bottom: 10px;
+}
+
+.footer-contact p:nth-child(4) {
+    color: #333;
+    /* Couleur du numéro de téléphone */
+    font-weight: bold;
+    /* Texte en gras */
+    padding-bottom: 10px;
+}
+
+/*Gère le transition d'apparition*/
+.footer-contact,
+#membership,
+#testimonials,
+#partenaires,
+#boxs {
+    opacity: 0;
+    /* Initialement invisible */
+    transition: opacity 0.5s;
+    /* Animation de transition */
+}
+
+/*Gère la transition de mouvement*/
+
+.animate-left {
+    opacity: 0;
+    transform: translateX(-200%);
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+
+.animate-right {
+    opacity: 0;
+    transform: translateX(200%);
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+
+/* Lorsque la classe active est ajoutée, l'élément apparaît */
+.animate-left.active,
+.animate-right.active {
+    opacity: 0.9;
+    transform: translateX(-50%);
 }

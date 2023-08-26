@@ -1,22 +1,18 @@
-// Fonction pour faire défiler la page vers le haut
-function scrollToTop() {
-    // Faites défiler la page de manière fluide vers le haut
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
+const scrollButton = document.getElementById("scrollButton");
 
-// Afficher ou masquer le bouton en fonction de la position de défilement
-window.onscroll = function () {
-    toggleScrollButton();
-};
-
-function toggleScrollButton() {
-    var scrollButton = document.getElementById("scrollButton");
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollButton.style.display = "block";
-    } else {
-        scrollButton.style.display = "none";
+scrollButton.addEventListener("click", () => {
+    const scrollDuration = 2000;
+    const scrollStep = -window.scrollY / (scrollDuration / 15);
+    function scroll() {
+        if (window.scrollY !== 0) {
+            window.scrollBy(0, scrollStep);
+            setTimeout(scroll, 15);
+        }
     }
-}
+    scroll();
+});
+
+window.onscroll = () => {
+    const scrollThreshold = 20;
+    scrollButton.style.display = (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) ? "block" : "none";
+};

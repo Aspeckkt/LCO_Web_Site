@@ -3,33 +3,28 @@ const words = ["Solutions", "Réalisations", "Projets"];
 let currentWordIndex = 0;
 let currentCharIndex = 0;
 let isDeleting = false;
-let typingSpeed = 150; // Vitesse de frappe en millisecondes
+let typingSpeed = 150;
+let pauseAfterType = 1500;
+let pauseAfterDelete = 1000;
+let deleteSpeed = 50;
 
 function typeText() {
     const currentWord = words[currentWordIndex];
-    if (!isDeleting) {
-        textElement.innerHTML = `<b>${currentWord.substring(0, currentCharIndex)}</b>`;
-        currentCharIndex++;
+    const char = currentWord[currentCharIndex];
 
-        if (currentCharIndex > currentWord.length) {
-            isDeleting = true;
-            setTimeout(typeText, 1500); // Pause après l'écriture complète
-        } else {
-            setTimeout(typeText, typingSpeed);
-        }
+    textElement.innerHTML = `<b>${currentWord.substring(0, currentCharIndex)}</b>`;
+    currentCharIndex += isDeleting ? -1 : 1;
+
+    if (currentCharIndex === currentWord.length + 1) {
+        isDeleting = true;
+        setTimeout(typeText, pauseAfterType);
+    } else if (currentCharIndex === -1) {
+        isDeleting = false;
+        currentWordIndex = (currentWordIndex + 1) % words.length;
+        setTimeout(typeText, pauseAfterDelete);
     } else {
-        textElement.innerHTML = `<b>${currentWord.substring(0, currentCharIndex)}</b>`;
-        currentCharIndex--;
-
-        if (currentCharIndex < 0) {
-            isDeleting = false;
-            currentWordIndex = (currentWordIndex + 1) % words.length;
-            setTimeout(typeText, 1000); // Pause après la suppression complète
-        } else {
-            setTimeout(typeText, 50); // Vitesse de suppression plus rapide
-        }
+        setTimeout(typeText, isDeleting ? deleteSpeed : typingSpeed);
     }
 }
 
-// Démarrez l'animation
 setTimeout(typeText, 1000);
