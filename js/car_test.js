@@ -1,26 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const testimonials = document.querySelectorAll('.testimonial');
-    const indicators = document.querySelectorAll('.indicator');
-    let currentIndex = 0;
+    const t = document.querySelectorAll('.testimonial');
+    const ind = document.querySelectorAll('.indicator');
+    let c = 0, I;
 
-    function showTestimonial(index) {
-        testimonials[currentIndex].classList.remove('active');
-        indicators[currentIndex].classList.remove('active');
-        testimonials[index].classList.add('active');
-        indicators[index].classList.add('active');
-        currentIndex = index;
-    }
+    const s = x => {
+        [c, x].forEach(e => {
+            [t, ind].forEach(a => a[e].classList.toggle('active'));
+        });
+        c = x;
+    };
 
-    function nextTestimonial() {
-        const nextIndex = (currentIndex + 1) % testimonials.length;
-        showTestimonial(nextIndex);
-    }
+    const n = () => s((c + 1) % t.length);
+    const r = () => (clearInterval(I), I = setInterval(n, 4000));
 
-    setInterval(nextTestimonial, 4000);
+    I = setInterval(n, 4000);
 
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => showTestimonial(index));
-    });
+    ind.forEach((d, x) => d.addEventListener('click', () => (s(x), r())));
 
-    showTestimonial(currentIndex);
+    s(c);
 });

@@ -1,4 +1,5 @@
 const scrollButton = document.getElementById("scrollButton");
+let buttonVisible = false; // Ajout d'une variable pour suivre l'état du bouton
 
 scrollButton.addEventListener("click", () => {
     const scrollDuration = 2000;
@@ -13,6 +14,12 @@ scrollButton.addEventListener("click", () => {
 });
 
 window.onscroll = () => {
-    const scrollThreshold = 20;
-    scrollButton.style.display = (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) ? "block" : "none";
+    const scrollThreshold = window.innerHeight * 2.50; // 230% de la hauteur de la fenêtre
+    if (!buttonVisible && (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold)) {
+        scrollButton.style.display = "block";
+        buttonVisible = true; // Définir le bouton comme visible
+    } else if (buttonVisible && (document.body.scrollTop <= scrollThreshold && document.documentElement.scrollTop <= scrollThreshold)) {
+        scrollButton.style.display = "none";
+        buttonVisible = false; // Définir le bouton comme invisible
+    }
 };

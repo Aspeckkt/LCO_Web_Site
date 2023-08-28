@@ -1,14 +1,15 @@
-const boxes = ['.box.b1.animate-left', '.box.b2.animate-right', '.box.b3.animate-left', '.box.b4.animate-right'];
+const boxes = ['.box.b1.animate-left', '.box.b2', '.box.b3.animate-left', '.box.b4'];
+const [b2, b4] = ['.box.b2', '.box.b4'].map(selector => document.querySelector(selector));
+const activate = (box) => box.classList.toggle('active', box.getBoundingClientRect().top < window.innerHeight * 0.66);
+const replace = () => [b2, b4].forEach(box => {
+    const shouldReplace = window.innerWidth < 1000;
+    box.classList.toggle('animate-right', !shouldReplace);
+    box.classList.toggle('animate-left', shouldReplace);
+});
+const handleWindow = () => (activateAll(), replace());
 
-function activateAnimation(box) {
-    const isActive = box.getBoundingClientRect().top < window.innerHeight * 0.6;
-    box.classList.toggle('active', isActive);
-}
+const activateAll = () => boxes.forEach(selector => activate(document.querySelector(selector)));
 
-function activateAllAnimations() {
-    boxes.map(selector => document.querySelector(selector)).forEach(activateAnimation);
-}
-
-window.addEventListener('scroll', activateAllAnimations);
-window.addEventListener('resize', activateAllAnimations);
-window.addEventListener('load', activateAllAnimations);
+window.addEventListener('load', handleWindow);
+window.addEventListener('scroll', activateAll);
+window.addEventListener('resize', handleWindow);

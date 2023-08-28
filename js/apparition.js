@@ -7,6 +7,6 @@ function observeAndAnimate(sectionId, threshold) {
     observer.observe(section);
 }
 
-const sectionsToAnimate = ['.footer-contact', '#testimonials', '#partenaires', '#membership'];
-sectionsToAnimate.forEach(section => observeAndAnimate(section, 0.25));
-observeAndAnimate('#boxs', 0.15);
+const sectionsToAnimate = ['.carrousel', '.footer-logo', '.footer-contact', '.footer-social', '#testimonials', '#partenaires', '#membership'];
+sectionsToAnimate.forEach(section => observeAndAnimate(section, 0.27));
+observeAndAnimate('#boxs', 0.12);
