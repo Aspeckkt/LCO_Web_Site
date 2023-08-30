@@ -12,7 +12,7 @@ function typeText() {
     const currentWord = words[currentWordIndex];
     const char = currentWord[currentCharIndex];
 
-    textElement.innerHTML = `<b>${currentWord.substring(0, currentCharIndex)}</b>`;
+    textElement.innerHTML = `${currentWord.substring(0, currentCharIndex)}`;
     currentCharIndex += isDeleting ? -1 : 1;
 
     if (currentCharIndex === currentWord.length + 1) {

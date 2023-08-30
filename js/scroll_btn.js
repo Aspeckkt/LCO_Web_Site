@@ -3,7 +3,7 @@ let buttonVisible = false; // Ajout d'une variable pour suivre l'état du bouton
 
 scrollButton.addEventListener("click", () => {
     const scrollDuration = 2000;
-    const scrollStep = -window.scrollY / (scrollDuration / 15);
+    const scrollStep = -window.scrollY / (scrollDuration / 175);
     function scroll() {
         if (window.scrollY !== 0) {
             window.scrollBy(0, scrollStep);
