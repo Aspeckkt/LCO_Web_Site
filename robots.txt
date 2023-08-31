@@ -1,0 +1,4 @@
+User-agent: *
+
+
+sitemap: https://www.votre-site-web.com/index.html

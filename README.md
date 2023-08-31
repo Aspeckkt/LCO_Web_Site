@@ -26,4 +26,4 @@ Le site à trois languages disctinc, HTML5, CSS3 et JavaScript.
 | 28/08/2023  	| Amélioration de la Div Principale, l'animation au format responsive, n'était pas adaptée au comportement attendu. Minification de l'ensemble des données du code, tous les scripts ont été réduits, sans perdre l'utilité de leurs conceptions. Retouche au niveau du CSS Jonction de variables pour gérer les couleurs. | Dernier commit avant passage sur le dell.	|   
 | 29/08/2023  	| Création de la div prestations et services, animation 3D style glace et modifications de style générale.	| 	Difficile de trouver d'autres ajout, la maquette semble complète. |   
 | 30/08/2023  	| Mise en place de prestations et services dans le projets, correction de style et améliorations des scripts.	| La date ce rapproche, j'ai toujours un doute sur le produit final n'ayant aucune base ou demande particulière je suis un peu confus.	|   
-
+| 31/08/2023  	| Modifications des styles généraux du site et ajout d'une map via robots.txt	| journée front-end basique modifications encore, et encore d'éléments. |   
