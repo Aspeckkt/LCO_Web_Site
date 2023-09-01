@@ -37,6 +37,6 @@ Toujours sur trois languages disctinc, HTML5, CSS3 et JavaScript.
 
 # SUIVIE JOURNALIER MAQUETTE 2 - GEOFFRAY PELLERIN
 
-
 | Date        | Travail effectuer    | Commentaire |
+| ------|-----|-----|
 | 01/09/2023  	| Regard sur une autre maquette approfondie emplacement de la base du site. Head, Header, Main, Footer.	| Nouvelle maquette en préparation	|   
