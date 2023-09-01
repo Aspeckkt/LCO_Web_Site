@@ -11,7 +11,7 @@ Sosciété SII, spécialisé dans la dématérialisation de facture d'entreprise
 Le site à trois languages disctinc, HTML5, CSS3 et JavaScript.
 
 *********************************************************************************
-# SUIVIE JOURNALIER - GEOFFRAY PELLERIN
+# SUIVIE JOURNALIER MAQUETTE 1 - GEOFFRAY PELLERIN
 
 | Date        | Travail effectuer    | Commentaire |
 | ------|-----|-----|
@@ -27,3 +27,16 @@ Le site à trois languages disctinc, HTML5, CSS3 et JavaScript.
 | 29/08/2023  	| Création de la div prestations et services, animation 3D style glace et modifications de style générale.	| 	Difficile de trouver d'autres ajout, la maquette semble complète. |   
 | 30/08/2023  	| Mise en place de prestations et services dans le projets, correction de style et améliorations des scripts.	| La date ce rapproche, j'ai toujours un doute sur le produit final n'ayant aucune base ou demande particulière je suis un peu confus.	|   
 | 31/08/2023  	| Modifications des styles généraux du site et ajout d'une map via robots.txt	| journée front-end basique modifications encore, et encore d'éléments. |   
+| 01/09/2023  	| Regard sur l'ensemble du site. suppresion du bouton pour remonter en haut de page.  | La première maquette est satisfaisante, dynamique et jeune le style serras adapter pour la prochaine.	|   
+
+*********************************************************************************
+
+### Technologies
+
+Toujours sur trois languages disctinc, HTML5, CSS3 et JavaScript.
+
+# SUIVIE JOURNALIER MAQUETTE 2 - GEOFFRAY PELLERIN
+
+
+| Date        | Travail effectuer    | Commentaire |
+| 01/09/2023  	| Regard sur une autre maquette approfondie emplacement de la base du site. Head, Header, Main, Footer.	| Nouvelle maquette en préparation	|   
